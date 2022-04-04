@@ -2,28 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Bar, BarChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 const SpecialChart = () => {
-    const [phones, setPhones]=useState([])
-    useEffect(()=>{
-        fetch('https://openapi.programming-hero.com/api/phones?search=iphone')
-        .then(res=>res.json())
-        .then(data=> {
-            const loadedData = data.data.data;
-            const phoneData = loadedData.map(phone=> {
-                const parts = phone.slug.split('-');
-                const ph ={
-                    name: parts[0],
-                    value: parseInt(parts[1])
-                }
-                return ph;
-            })
-            setPhones(phoneData)
-            console.log(phoneData);
-        })
-    },[])
+    const [datas, setDatas] = useState([]);
+    useEffect(() => {
+      fetch("chartData.json")
+        .then((res) => res.json())
+        .then((data) => setDatas(data));
+    }, []);
+       
     return (
-        <BarChart width={800} height={400} data={phones}>
-          <Bar dataKey="value" fill="#8884d8" />
-          <XAxis dataKey={'name'} />
+        <BarChart width={800} height={400} data={datas}>
+          <Bar dataKey="investment" fill="#8884d8" />
+          <Bar dataKey="revenue" fill="green" />
+          <Bar dataKey="sell" fill="red" />
+          <XAxis dataKey={'month'} />
           <YAxis />
           <Tooltip />
         </BarChart>

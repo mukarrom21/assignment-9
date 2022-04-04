@@ -17,7 +17,7 @@ const Header = () => {
         BLOGS
       </CustomLink>
       <CustomLink to={"/about"} className="ml-5">
-        About
+        ABOUT
       </CustomLink>
     </nav>
   );
