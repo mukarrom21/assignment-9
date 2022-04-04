@@ -1,10 +1,10 @@
 import React from "react";
 import useLaptop from "../../hooks/useLaptop";
+import Laptop from "../Laptop/Laptop";
 
 const Home = () => {
     const [laptops, setLaptops] = useLaptop();
     let laptop3 = laptops.slice(0, 3);
-    console.log(laptop3)
   return (
     <main className="mb-5">
       <section className="grid grid-cols-2 my-10 w-full md:w-3/4 mx-auto">
@@ -36,9 +36,12 @@ const Home = () => {
 
       <section>
           <h1 className="text-center text-4xl font-bold">Customer Reviews</h1>
-          <div>
+          <div className="flex flex-wrap justify-center">
               {
-                  laptop3.map(laptop=> <p>Laptop: {laptop.id}</p>)
+                  laptop3.map(laptop=> <Laptop
+                  key={laptop.id}
+                  laptop={laptop}
+                  ></Laptop>)
               }
           </div>
           <button className="block mx-auto bg-blue-600 text-white font-semibold px-12 rounded-md my-7">See All Reviews</button>
