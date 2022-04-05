@@ -7,7 +7,8 @@ const UserReviews = ({ comment }) => {
     <div className="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
       {/* ********************************************** */}
       <div className="flex flex-col items-center pb-3">
-        <img className="mb-3 w-24 h-24 rounded-full shadow-lg" src={image} alt="Bonnie image" />
+        <img className="mb-3 w-32 h-32 rounded-full shadow-lg mx-auto mt-2" src={image} alt="Bonnie image" />
+        
         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
           {reviewer_name}
         </h5>
