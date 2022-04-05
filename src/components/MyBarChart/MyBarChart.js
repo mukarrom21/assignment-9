@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Bar, BarChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 const SpecialChart = () => {
     const [datas, setDatas] = useState([]);
@@ -10,14 +10,17 @@ const SpecialChart = () => {
     }, []);
        
     return (
-        <BarChart width={800} height={400} data={datas}>
+      <div style={{width:'100%', height: 300}} className='rounded-lg shadow-md m-1 mx-auto'>
+        <ResponsiveContainer>
+        <BarChart data={datas}>
           <Bar dataKey="investment" fill="#8884d8" />
           <Bar dataKey="revenue" fill="green" />
-          <Bar dataKey="sell" fill="red" />
           <XAxis dataKey={'month'} />
           <YAxis />
           <Tooltip />
         </BarChart>
+        </ResponsiveContainer>
+      </div>
     );
 };
 

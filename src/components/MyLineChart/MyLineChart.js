@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const MyLineChart = () => {
   const [datas, setDatas] = useState([]);
@@ -9,13 +9,17 @@ const MyLineChart = () => {
       .then((data) => setDatas(data));
   }, []);
   return (
-    <LineChart width={800} height={500} data={datas}>
+    <div style={{width:'100%', height: 300}} className='rounded-lg shadow-md m-1 mx-auto'>
+      <ResponsiveContainer>
+      <LineChart  data={datas}>
       <Line dataKey={"investment"}></Line>
       <Line dataKey={"revenue"}></Line>
       <XAxis dataKey="month"></XAxis>
       <YAxis></YAxis>
       <Tooltip></Tooltip>
     </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

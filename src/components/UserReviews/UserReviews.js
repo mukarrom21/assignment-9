@@ -1,21 +1,18 @@
 import React from "react";
 
-const Laptop = ({ laptop }) => {
-  const { image, products_name, rating, review, reviewer_name } = laptop;
+const UserReviews = ({ comment }) => {
+  const {products_name, review, reviewer_name, image } = comment;
+  console.log(comment);
   return (
     <div className="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
       {/* ********************************************** */}
       <div className="flex flex-col items-center pb-3">
-        <img
-          className="mb-3 w-24 h-24 rounded-full shadow-lg"
-          src={image}
-          alt="Bonnie image"
-        />
+        <img className="mb-3 w-24 h-24 rounded-full shadow-lg" src={image} alt="Bonnie image" />
         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
           {reviewer_name}
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-          {products_name}
+          বইয়ের নাম: {products_name}
         </span>
       </div>
       {/* ******************************************** */}
@@ -72,4 +69,4 @@ const Laptop = ({ laptop }) => {
   );
 };
 
-export default Laptop;
+export default UserReviews;

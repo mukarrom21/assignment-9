@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useLaptop from "../../hooks/useLaptop";
-import Laptop from "../Laptop/Laptop";
+import useReview from "../../hooks/useReview";
+import UserReviews from "../UserReviews/UserReviews";
 
 const Home = () => {
-    const [laptops, setLaptops] = useLaptop();
-    let laptop3 = laptops.slice(0, 3);
+    const [comments, setComments] = useReview();
+    let comment3 = comments.slice(0, 3);
   return (
     <main className="mb-5">
       <section className="grid grid-cols-2 my-10 w-full md:w-3/4 mx-auto">
-        <div className="max-h-[500px] my-auto">
+        <div className=" my-auto">
           <h1 className="text-6xl font-extrabold text-center">
             বই পড়ুন
           </h1>
@@ -23,7 +23,7 @@ const Home = () => {
             Live demo
           </button>
         </div>
-        <div className="max-h-[500px] flex justify-center align-middle">
+        <div className="max-h-[500px] flex justify-center items-center">
           <img
             className=""
             src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/0a160f829_37691.jpg"
@@ -32,15 +32,17 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
+      <section className="">
           <h1 className="text-center text-4xl font-bold">Customer Reviews</h1>
-          <div className="flex flex-wrap justify-center">
+          <div className="">
+              <Link to={'/reviews'} className='flex flex-wrap md:flex-nowrap justify-center'>
               {
-                  laptop3.map(laptop=> <Laptop
-                  key={laptop.id}
-                  laptop={laptop}
-                  ></Laptop>)
+                  comment3.map(comment=> <UserReviews
+                  key={comment.id}
+                  comment={comment}
+                  ></UserReviews>)
               }
+              </Link>
           </div>
           <Link to={'/reviews'} className="text-center block w-[300px] mx-auto bg-blue-600 text-white font-semibold px-12 rounded-md my-7">See All Reviews</Link>
       </section>
