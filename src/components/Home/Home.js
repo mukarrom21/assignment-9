@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useLaptop from "../../hooks/useLaptop";
 import Laptop from "../Laptop/Laptop";
 
@@ -10,26 +11,23 @@ const Home = () => {
       <section className="grid grid-cols-2 my-10 w-full md:w-3/4 mx-auto">
         <div className="max-h-[500px] my-auto">
           <h1 className="text-6xl font-extrabold text-center">
-            Your nexr leptop
+            বই পড়ুন
           </h1>
           <h1 className="text-6xl font-extrabold text-blue-700 text-center">
-            Your best leptop
+            নিজেকে গড়ুন
           </h1>
           <p className="my-5 ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            voluptatibus cupiditate deserunt dignissimos doloremque facilis
-            libero. Facere similique doloremque deserunt exercitationem. Quos
-            ipsa tenetur commodi!
+          'বই বিশ্বাসের অঙ্গ, বই মানব সমাজকে টিকাইয়া রাখিবার জন্য জ্ঞান দান করে। অতএব বই হইতেছে সভ্যতার রক্ষাকবচ।' ভিক্টর হুগোর এ কথাটি মেনে নিয়েই সভ্যতা পথ চলেছে বহু যুগ ধরে । বই হলো সম্পর্কের সেতু, বই পড়েই কেবল ভালো থাকা যায়। বই মানুষে মানুষে বন্ধন মজবুত করে। তাই প্রিয়জনকে উপহার দেওয়ার এর চেয়ে ভালো জিনিস আর কিইবা হতে পারে। বইয়ের মাধ্যমে অকৃত্রিম বন্ধু হওয়া যায়। বই হচ্ছে সেরা উপহার। বিশেষ দিনে, বিশেষ ক্ষণে যারা প্রিয়জনকে বই উপহার দিতে চায়, তাদের অনেকেই গ্রন্থমেলায় ঘুরে ঘুরে কিনছে নতুন বই। প্রকাশকরাও আহ্বান জানালেন এই বলে- বইমেলায় এসে শুধু সেলফি তোলা নয়, বই কিনুন, বই পড়ুন। প্রিয়জনকে বই উপহার দিন।
           </p>
           <button className="bg-blue-200 py-3 px-6 md:py-5 md:px-10 font-semibold text-blue-900 rounded-md mt-4 block mx-auto hover:bg-blue-500 hover:text-white">
             Live demo
           </button>
         </div>
-        <div className="max-h-[500px]">
+        <div className="max-h-[500px] flex justify-center align-middle">
           <img
-            className="w-full h-full"
-            src="https://img.freepik.com/free-psd/laptop-psd-mockup-with-gradient-led-light_53876-138283.jpg?t=st=1649062793~exp=1649063393~hmac=f8c9a46bfc864b2dd331e419ea52d042f7f050e6f382e9e2d0362e2a874167ae&w=996"
-            alt=""
+            className=""
+            src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/0a160f829_37691.jpg"
+            alt="ডেল কার্নেগীর রচনা সমগ্র"
           />
         </div>
       </section>
@@ -44,7 +42,7 @@ const Home = () => {
                   ></Laptop>)
               }
           </div>
-          <button className="block mx-auto bg-blue-600 text-white font-semibold px-12 rounded-md my-7">See All Reviews</button>
+          <Link to={'/reviews'} className="text-center block w-[300px] mx-auto bg-blue-600 text-white font-semibold px-12 rounded-md my-7">See All Reviews</Link>
       </section>
     </main>
   );
